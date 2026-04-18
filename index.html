@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chill Fix AC — Panasonic AC Chennai Tambaram</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #061A2E;
+    --deep: #0C2D4E;
+    --blue: #1565C0;
+    --sky: #42A5F5;
+    --ice: #B3E5FC;
+    --gold: #FFB300;
+    --white: #FFFFFF;
+    --muted: #90CAF9;
+    --card: rgba(255,255,255,0.05);
+    --radius: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(6,26,46,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(66,165,245,0.15);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--sky); }
+  .nav-logo span { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 10px 24px; border-radius: 30px;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px;
+    cursor: pointer; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,179,0,0.4); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 80px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(21,101,192,0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(66,165,245,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,179,0,0.15); border: 1px solid var(--gold);
+    color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 2px;
+    padding: 6px 18px; border-radius: 30px; margin-bottom: 20px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+  .hero-title .accent { color: var(--sky); }
+  .hero-title .brand { color: var(--gold); }
+  .hero-sub {
+    margin-top: 20px; font-size: 18px; font-weight: 300; color: var(--muted); line-height: 1.7;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  .price-card {
+    margin-top: 36px;
+    background: linear-gradient(135deg, rgba(21,101,192,0.4), rgba(66,165,245,0.15));
+    border: 1px solid rgba(66,165,245,0.3);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    display: inline-block;
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+  .price-label { font-size: 12px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+  .price-amount { font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: var(--gold); line-height: 1; letter-spacing: 2px; }
+  .price-note { font-size: 15px; color: var(--ice); margin-top: 4px; }
+  .price-compare { font-size: 13px; color: #ef9a9a; text-decoration: line-through; margin-top: 2px; }
+
+  .hero-btns { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.4s both; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 16px;
+    padding: 16px 36px; border-radius: 50px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(255,179,0,0.35); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 16px;
+    padding: 16px 36px; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.3); cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--sky); background: rgba(66,165,245,0.1); }
+
+  /* hero visual */
+  .hero-visual {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    animation: fadeUp 0.8s ease 0.3s both;
+    position: relative;
+  }
+  .ac-box {
+    width: 100%; max-width: 420px;
+    background: linear-gradient(160deg, #0D2B45, #1565C0 120%);
+    border-radius: 24px;
+    border: 1px solid rgba(66,165,245,0.4);
+    padding: 40px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ac-box::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(66,165,245,0.25), transparent 70%);
+  }
+  .ac-icon { font-size: 80px; display: block; margin-bottom: 16px; }
+  .ac-model { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 3px; color: var(--ice); }
+  .ac-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+  .badge-row { display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px; font-weight: 600; color: var(--ice);
+    padding: 6px 14px; border-radius: 20px; letter-spacing: 0.5px;
+  }
+
+  /* ── FEATURES ── */
+  section { padding: 80px 5%; }
+  .section-label { font-size: 12px; letter-spacing: 3px; color: var(--sky); text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 60px); letter-spacing: 2px; margin-bottom: 48px; }
+
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  .feat-card {
+    background: var(--card);
+    border: 1px solid rgba(66,165,245,0.15);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .feat-card:hover { transform: translateY(-6px); border-color: rgba(66,165,245,0.5); box-shadow: 0 16px 40px rgba(21,101,192,0.25); }
+  .feat-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .feat-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .feat-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+  /* ── WHY US ── */
+  .why-section { background: linear-gradient(180deg, transparent, rgba(21,101,192,0.1) 50%, transparent); }
+  .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .why-item { display: flex; align-items: flex-start; gap: 16px; }
+  .why-num {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--blue); border: 1px solid rgba(66,165,245,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--sky);
+  }
+  .why-text-title { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+  .why-text-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  .stat-box {
+    background: linear-gradient(135deg, rgba(21,101,192,0.3), rgba(66,165,245,0.1));
+    border: 1px solid rgba(66,165,245,0.25);
+    border-radius: 24px; padding: 40px 36px; text-align: center;
+  }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .stat-item {}
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--gold); letter-spacing: 2px; line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ── PRODUCTS ── */
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .product-card {
+    background: linear-gradient(160deg, rgba(13,43,69,0.9), rgba(21,101,192,0.2));
+    border: 1px solid rgba(66,165,245,0.2);
+    border-radius: 20px; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .product-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(21,101,192,0.3); }
+  .product-img { background: linear-gradient(135deg, #0a2540, #1565C0); padding: 40px; text-align: center; font-size: 72px; border-bottom: 1px solid rgba(66,165,245,0.15); }
+  .product-body { padding: 24px; }
+  .product-brand { font-size: 12px; letter-spacing: 2px; color: var(--sky); text-transform: uppercase; margin-bottom: 6px; }
+  .product-name { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+  .product-price { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--gold); letter-spacing: 1px; }
+  .product-incl { font-size: 13px; color: var(--muted); margin-top: 2px; margin-bottom: 16px; }
+  .product-btn {
+    width: 100%; padding: 13px; border-radius: 30px;
+    background: var(--blue); border: none; color: var(--white);
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px;
+    cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: block; text-align: center;
+  }
+  .product-btn:hover { background: #1976D2; }
+  .featured-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--gold); color: var(--navy);
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    padding: 4px 12px; border-radius: 20px;
+  }
+  .product-card { position: relative; }
+
+  /* ── CONTACT ── */
+  .contact-section { text-align: center; }
+  .contact-inner { max-width: 800px; margin: 0 auto; }
+  .contact-card {
+    background: linear-gradient(135deg, rgba(21,101,192,0.3), rgba(13,43,69,0.8));
+    border: 1px solid rgba(66,165,245,0.3);
+    border-radius: 28px; padding: 60px 48px;
+  }
+  .contact-phone { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 8vw, 80px); color: var(--gold); letter-spacing: 4px; margin: 20px 0; }
+  .contact-sub { font-size: 16px; color: var(--muted); margin-bottom: 36px; }
+  .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-call {
+    background: #25D366; color: white;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 16px;
+    padding: 16px 40px; border-radius: 50px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-call:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,0.35); }
+  .btn-ring {
+    background: var(--blue); color: white;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 16px;
+    padding: 16px 40px; border-radius: 50px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn-ring:hover { transform: translateY(-3px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(66,165,245,0.1);
+    padding: 36px 5%;
+    text-align: center;
+    font-size: 14px; color: var(--muted);
+  }
+  footer strong { color: var(--sky); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { order: -1; }
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .contact-card { padding: 40px 24px; }
+  }
+
+  /* floating snowflakes bg */
+  .snow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+  .flake { position: absolute; top: -20px; color: rgba(179,229,252,0.15); font-size: 18px; animation: fall linear infinite; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- Floating snow -->
+<div class="snow" id="snow"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">CHILL<span>FIX</span> AC</div>
+  <a class="nav-cta" href="tel:8608604519">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="position:relative; z-index:1;">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">⚡ TAMBARAM'S BEST PRICE</div>
+      <h1 class="hero-title">
+        BEAT<br>THE<br><span class="accent">HEAT</span><br><span class="brand">TODAY</span>
+      </h1>
+      <p class="hero-sub">Chennai's most trusted AC sales & service. Brand new ACs cheaper than any showroom — with free professional installation.</p>
+      <div class="price-card">
+        <div class="price-label">Panasonic AC — Starting at</div>
+        <div class="price-amount">₹34,000</div>
+        <div class="price-note">✅ Includes Free Installation</div>
+        <div class="price-compare">Showroom price: ₹38,000+</div>
+      </div>
+      <div class="hero-btns">
+        <a href="https://wa.me/918608604519?text=Hi%2C%20I'm%20interested%20in%20buying%20Panasonic%20AC" class="btn-primary" target="_blank">💬 WhatsApp Us</a>
+        <a href="tel:8608604519" class="btn-secondary">📞 86086 04519</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ac-box">
+        <span class="ac-icon">❄️</span>
+        <div class="ac-model">PANASONIC AC</div>
+        <div class="ac-sub">Split AC — 1 Ton / 1.5 Ton / 2 Ton</div>
+        <div class="badge-row">
+          <span class="badge">5-Star Rating</span>
+          <span class="badge">Inverter Tech</span>
+          <span class="badge">Wi-Fi Ready</span>
+          <span class="badge">Auto Clean</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="position:relative; z-index:1;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-label">Why choose us</div>
+    <div class="section-title">WHAT YOU GET</div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <span class="feat-icon">💰</span>
+        <div class="feat-title">Lowest Price Guaranteed</div>
+        <div class="feat-desc">We sell brand new ACs at prices lower than any showroom in Chennai. No hidden charges.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🔧</span>
+        <div class="feat-title">Free Professional Installation</div>
+        <div class="feat-desc">Every AC comes with free installation by our certified expert technicians.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">⚡</span>
+        <div class="feat-title">Same Day / Next Day</div>
+        <div class="feat-desc">Order today, get it installed tomorrow. We move fast so you can stay cool.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🛡️</span>
+        <div class="feat-title">Full Warranty Support</div>
+        <div class="feat-desc">Complete manufacturer warranty. We also handle all service calls after purchase.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📦</span>
+        <div class="feat-title">100% Brand New Units</div>
+        <div class="feat-desc">Every unit is sealed, original, and brand new — directly from authorised distributors.</div>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🏠</span>
+        <div class="feat-title">Home Delivery Included</div>
+        <div class="feat-desc">We deliver to your doorstep anywhere in Tambaram and surrounding areas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" style="position:relative; z-index:1;">
+  <div class="why-inner">
+    <div>
+      <div class="section-label">Our promise</div>
+      <div class="section-title">TRUSTED BY TAMBARAM</div>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-num">1</div>
+          <div>
+            <div class="why-text-title">Cheaper than Showroom</div>
+            <div class="why-text-desc">We cut the middleman so you save thousands on every AC you buy.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-num">2</div>
+          <div>
+            <div class="why-text-title">Expert Service Team</div>
+            <div class="why-text-desc">10+ years of experience in AC repair, service, and installation across Chennai.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-num">3</div>
+          <div>
+            <div class="why-text-title">No Surprise Bills</div>
+            <div class="why-text-desc">What we quote is what you pay. No hidden costs, no surprise charges.</div>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-num">4</div>
+          <div>
+            <div class="why-text-title">After-Sale Support</div>
+            <div class="why-text-desc">We stay with you after the sale — service, warranty claims, and AMC packages available.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="stat-box">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24hr</div>
+          <div class="stat-label">Fast Installation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section style="position:relative; z-index:1;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-label">Current offers</div>
+    <div class="section-title">OUR AC DEALS</div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="featured-badge">⭐ BEST DEAL</div>
+        <div class="product-img">❄️</div>
+        <div class="product-body">
+          <div class="product-brand">Panasonic</div>
+          <div class="product-name">Split AC — 1.5 Ton Inverter</div>
+          <div class="product-price">₹34,000</div>
+          <div class="product-incl">✅ Includes Free Installation</div>
+          <a href="https://wa.me/918608604519?text=Hi%2C%20I'm%20interested%20in%20Panasonic%201.5%20Ton%20AC" class="product-btn" target="_blank">Get This Deal</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">🌬️</div>
+        <div class="product-body">
+          <div class="product-brand">Panasonic</div>
+          <div class="product-name">Split AC — 1 Ton Inverter</div>
+          <div class="product-price">₹29,000</div>
+          <div class="product-incl">✅ Includes Free Installation</div>
+          <a href="https://wa.me/918608604519?text=Hi%2C%20I'm%20interested%20in%20Panasonic%201%20Ton%20AC" class="product-btn" target="_blank">Get This Deal</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">💨</div>
+        <div class="product-body">
+          <div class="product-brand">Panasonic</div>
+          <div class="product-name">Split AC — 2 Ton Inverter</div>
+          <div class="product-price">₹42,000</div>
+          <div class="product-incl">✅ Includes Free Installation</div>
+          <a href="https://wa.me/918608604519?text=Hi%2C%20I'm%20interested%20in%20Panasonic%202%20Ton%20AC" class="product-btn" target="_blank">Get This Deal</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" style="position:relative; z-index:1;">
+  <div class="contact-inner">
+    <div class="section-label" style="text-align:center;">Get in touch</div>
+    <div class="section-title" style="text-align:center;">READY TO ORDER?</div>
+    <div class="contact-card">
+      <p style="font-size:18px; color:var(--muted);">Call or WhatsApp us anytime</p>
+      <div class="contact-phone">86086 04519</div>
+      <p class="contact-sub">Chill Fix AC — Tambaram, Chennai<br>Open 7 days a week · Same day response guaranteed</p>
+      <div class="contact-btns">
+        <a href="https://wa.me/918608604519?text=Hi%2C%20I%20want%20to%20buy%20an%20AC" class="btn-call" target="_blank">💬 WhatsApp Now</a>
+        <a href="tel:8608604519" class="btn-ring">📞 Call Directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="position:relative; z-index:1;">
+  <strong>CHILL FIX AC</strong> — Tambaram, Chennai &nbsp;|&nbsp; 📞 86086 04519 &nbsp;|&nbsp; AC Sales · Service · Installation<br>
+  <span style="font-size:12px; margin-top:8px; display:block; opacity:0.5;">© 2025 Chill Fix AC. All rights reserved.</span>
+</footer>
+
+<script>
+  const snow = document.getElementById('snow');
+  for (let i = 0; i < 18; i++) {
+    const f = document.createElement('div');
+    f.className = 'flake';
+    f.textContent = '❄';
+    f.style.left = Math.random() * 100 + 'vw';
+    f.style.fontSize = (12 + Math.random() * 16) + 'px';
+    f.style.animationDuration = (8 + Math.random() * 14) + 's';
+    f.style.animationDelay = (-Math.random() * 20) + 's';
+    snow.appendChild(f);
+  }
+</script>
+</body>
+</html>
